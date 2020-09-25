@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "42 subject mirror",
+    "version": "1.0",
+    "icons": { "255" : "icon.png"},
+    "description": "42 subject mirror extension",
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://projects.intra.42.fr/*", "https://projects.intra.42.fr/*"],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "activeTab", "http://projects.intra.42.fr/", "https://projects.intra.42.fr/"
+    ]
+}
+
